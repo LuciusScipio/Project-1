@@ -1,0 +1,41 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: CloudFormation template for a static website on S3
+Parameters:
+  BucketName:
+    Type: String
+    Description: Unique name for the S3 bucket
+    ConstraintDescription: Must be globally unique
+Resources:
+  # The S3 bucket to host your website files.
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref BucketName
+      WebsiteConfiguration:
+        IndexDocument: index.html
+        ErrorDocument: error.html
+      # To allow the public bucket policy, you must explicitly set these to false.
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: false
+        BlockPublicPolicy: false
+        IgnorePublicAcls: false
+        RestrictPublicBuckets: false
+
+  # The S3 bucket policy that makes your bucket publicly readable.
+  BucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref S3Bucket
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: PublicReadForGetBucketObjects
+            Effect: Allow
+            Principal: '*'
+            Action: 's3:GetObject'
+            Resource: !Sub 'arn:aws:s3:::${S3Bucket}/*'
+
+Outputs:
+  WebsiteURL:
+    Description: URL for the static website
+    Value: !GetAtt S3Bucket.WebsiteURL
