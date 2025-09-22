@@ -16,22 +16,84 @@
     <main>
         <section class="intro">
             <h2>Hello there! 👋</h2>
-            <p>I'm Victor Steve and I'm currently diving deep into the world of cloud computing. This static website is a hands-on project to demonstrate my skills in creating and deploying scalable, serverless web infrastructure on AWS.</p>
+            <p>I am Victor Steve and I am currently diving deep into the world of cloud computing. This static website is a hands-on project to demonstrate my skills in creating and deploying scalable, serverless web infrastructure on AWS.</p>
         </section>
 
         <section class="projects">
-            <h2>Projects and Milestones</h2>
+            <h2>My Cloud Computing Projects</h2>
             <div class="project-card">
-                <h3>Static Website on S3</h3>
-                <p>This very website is a testament to my ability to provision a static hosting solution using AWS S3 and CloudFormation.</p>
+                <div class="project-content">
+                    <h3>🌐 Project 1: Deploy a Static Website on AWS S3 with CloudFormation</h3>
+                    <p>This project was an end-to-end exercise in provisioning and managing cloud infrastructure as code (IaC).</p>
+                    <ul>
+                        <li><strong>Tools Used:</strong> AWS S3, AWS CloudFormation, AWS CLI</li>
+                        <li><strong>What I Learned:</strong> AWS storage fundamentals, IaC with CloudFormation, and basic CLI commands for deployment.</li>
+                    </ul>
+                    <p><strong>Steps I Followed:</strong></p>
+                    <ol>
+                        <li>Created a simple HTML/CSS website.</li>
+                        <li>Wrote a CloudFormation template (YAML) to automate S3 bucket creation and configuration.</li>
+                        <li>Used the AWS CLI to deploy the template and upload the website files.</li>
+                        <li>Tested the website by accessing its public URL.</li>
+                    </ol>
+                    <div class="github-link">
+                        <a href="https://github.com/LuciusScipio/Project-1" target="_blank">View on GitHub</a>
+                    </div>
+                </div>
+                <div class="project-image">
+                    <img src="photo1.png" alt="Screenshot of Project 1">
+                </div>
             </div>
+            
             <div class="project-card">
-                <h3>Serverless Backend</h3>
-                <p>I am exploring how to use AWS Lambda and API Gateway to build a serverless REST API without managing any servers.</p>
+                <div class="project-content">
+                    <h3>🐳 Project 2: Containerize a Flask App with Docker on AWS EC2 and deploy using Terraform</h3>
+                    <p>This project focused on containerization and automating infrastructure provisioning for a web application.</p>
+                    <ul>
+                        <li><strong>Tools Used:</strong> Docker, Terraform, AWS EC2, GitHub, SSH</li>
+                        <li><strong>What I Learned:</strong> Containerizing applications with Docker, writing Terraform scripts to provision cloud resources, and performing manual CI/CD for updates.</li>
+                    </ul>
+                    <p><strong>Steps I Followed:</strong></p>
+                    <ol>
+                        <li>Created a Python Flask app and wrote a Dockerfile to containerize it.</li>
+                        <li>Wrote a Terraform script to create an AWS EC2 instance and its security group.</li>
+                        <li>Configured a user data script to automatically install Docker and Git, clone the GitHub repository, build a Docker image, and run the container on instance launch.</li>
+                        <li>Troubleshot and resolved permission denied errors related to the Docker daemon and Git repository ownership on the EC2 instance.</li>
+                    </ol>
+                    <div class="github-link">
+                        <a href="https://github.com/LuciusScipio/Project-2" target="_blank">View on GitHub</a>
+                        <br>
+                        <a href="http://54.196.245.107" target="_blank">View Project</a>
+                    </div>
+                </div>
+                <div class="project-image">
+                    <img src="photo2.png" alt="Screenshot of Project 2">
+                </div>
             </div>
+
             <div class="project-card">
-                <h3>Containerization</h3>
-                <p>Learning how to package and deploy applications using Docker and orchestrate them with services like Amazon ECS.</p>
+                <div class="project-content">
+                    <h3>📊 Project 3: Automate AWS Resource Monitoring with Python and CloudWatch</h3>
+                    <p>This project involved building an automated, serverless monitoring and alerting system for an AWS resource.</p>
+                    <ul>
+                        <li><strong>Tools Used:</strong> Python (Boto3), AWS CloudWatch, AWS SNS, AWS Lambda, AWS EventBridge</li>
+                        <li><strong>What I Learned:</strong> Programmatic monitoring with Python and Boto3, configuring CloudWatch alarms and dashboards, and using serverless functions for event-driven automation.</li>
+                    </ul>
+                    <p><strong>Steps I Followed:</strong></p>
+                    <ol>
+                        <li>Set up a CloudWatch Dashboard to monitor EC2 instance CPU usage and an SNS topic for alerts.</li>
+                        <li>Wrote a Python script using boto3 to fetch CPU utilization data and publish messages to the SNS topic.</li>
+                        <li>Packaged the script and dependencies for deployment as an AWS Lambda function.</li>
+                        <li>Configured the Lambda function with the necessary IAM role permissions.</li>
+                        <li>Created a scheduled rule in EventBridge to trigger the Lambda function for automated monitoring.</li>
+                    </ol>
+                    <div class="github-link">
+                        <a href="https://github.com/LuciusScipio/Project-3" target="_blank">View on GitHub</a>
+                    </div>
+                </div>
+                <div class="project-image">
+                    <img src="photo3.png" alt="Screenshot of Project 3">
+                </div>
             </div>
         </section>
     </main>
