@@ -14,5 +14,5 @@
 __NOTES__
 - I created an IAM user having programmatic CLI access, set up Multifactor Authentication for the user and created a group having least privilege for the job added the user to it.
 - I learned to troubleshoot problems programmatically while creating the stacks with `aws cloudformation describe-stacks --stackname` and on the console with _Events_ tab under _Cloudformation_ .
-- I was able to update the website, just by altering the website files locally and syncing it to the bucket with `aws sync`.
+- I was able to update the website, just by altering the website files locally and syncing it to the bucket with `aws s3 cp`.
 - I learned to troubleshoot problems with _Yaml_ files and configurations. 
